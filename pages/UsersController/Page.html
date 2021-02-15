@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>Aso-后台管理系统</title>
+
+		<!-- BootstrapCss -->
+		<link rel="stylesheet" href="../../module/bootstrap/css/bootstrap.min.css">
+		<!-- 谷歌字体css -->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+		<!-- Template style -->
+		<link rel="stylesheet" href="../../module/dist/css/style.css">
+		<link rel="stylesheet" href="../../module/dist/et-line-font/et-line-font.css">
+		<link rel="stylesheet" href="../../module/dist/font-awesome/css/font-awesome.min.css">
+		<link type="text/css" rel="stylesheet" href="../../module/dist/weather/weather-icons.min.css">
+		<link type="text/css" rel="stylesheet" href="../../module/dist/weather/weather-icons-wind.min.css">
+		<!-- jQuery -->
+		<script src="../../module/dist/js/jquery.min.js"></script>
+		<script src="../../module/bootstrap/js/bootstrap.min.js"></script>
+		<script src="../../module/dist/js/ovio.js"></script>
+
+		<!-- MyJs -->
+		<script src="../../js/mainJs/AjaxPost.js"></script>
+		<script src="../../js/mainJs/Cookies.js"></script>
+
+		<script src="../../js/userscontroller/Page.js"></script>
+
+	</head>
+
+	<style type="text/css">
+		.add {
+			display: flex;
+			float: right;
+			margin-top: -30px;
+		}
+	</style>
+
+	<body class="sidebar-mini">
+		<div class="wrapper">
+
+			<!-- Main Header -->
+			<header class="main-header dark-bg">
+
+				<!-- Logo -->
+				<a href="../Dashboard/Dashboard.html" class="logo dark-bg">
+					<!-- mini logo for sidebar mini 50x50 pixels -->
+					<span class="logo-mini"><img src="../../module/dist/img/logo.png" alt="Ovio"></span>
+					<!-- logo for regular state and mobile devices -->
+					<span class="logo-lg"><img src="../../module/dist/img/logo-lg.png" alt="Ovio"></span> </a>
+
+				<!-- Header Navbar -->
+				<nav class="navbar navbar-static-top" role="navigation">
+					<!-- Sidebar toggle button-->
+					<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button"> <span class="sr-only">Toggle navigation</span></a>
+					<!-- Navbar Right Menu -->
+					<div class="navbar-custom-menu">
+						<ul class="nav navbar-nav">
+							<!-- Tasks Menu -->
+							<!-- User Account Menu -->
+							<li class="dropdown user user-menu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="../../module/dist/img/img1.jpg"
+									 class="user-image" alt="User Image" id="Ravatar"> <span class="hidden-xs" id="Rname">null</span> </a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</header>
+			<!-- Left side column. contains the logo and sidebar -->
+			<aside class="main-sidebar dark-bg">
+				<section class="sidebar">
+					<div class="user-panel black-bg">
+						<div class="pull-left image"> <img src="../../module/dist/img/img1.jpg" class="img-circle" alt="User Image" id="Lavatar">
+						</div>
+						<div class="pull-left info">
+							<p id="Lname">null</p>
+							<a href="#"><i class="fa fa-circle"></i> Online</a>
+						</div>
+					</div>
+
+					<!-- Sidebar Menu -->
+					<ul class="sidebar-menu" data-widget="tree">
+						<li class="header dark-bg">Menu</li>
+						<li class="treeview"> <a href="#"> <i class="fa fa-dashboard"></i> <span>Dashboard</span><span class="pull-right-container">
+									<i class="fa fa-angle-left pull-right"></i> </span> </a>
+							<ul class="treeview-menu">
+								<li><a href="../Dashboard/Dashboard.html"><i class="fa fa-angle-right"></i> Dashboard</a></li>
+							</ul>
+						</li>
+						<li class="treeview"><a href="#"><i class="fa fa-cogs"></i> <span>AppController</span>
+								<span class="pull-right-container">
+									<i class="fa fa-angle-left pull-right"></i> </span> </a>
+							<ul class="treeview-menu">
+								<li><a href="../AppController/Register.html"><i class="fa fa-angle-right"></i> Register</a></li>
+								<li><a href="../AppController/Login.html"><i class="fa fa-angle-right"></i> Login</a></li>
+								<li><a href="../AppController/Notice.html"><i class="fa fa-angle-right"></i> Notice</a></li>
+								<li><a href="#"><i class="fa fa-angle-right"></i> Version</a></li>
+								<li><a href="../AppController/Update.html"><i class="fa fa-angle-right"></i> Update</a></li>
+								<li><a href="../AppController/SchoolInfo.html"><i class="fa fa-angle-right"></i> SchoolInfo</a></li>
+							</ul>
+						</li>
+						<li class="treeview"><a href="#"><i class="fa fa-paper-plane-o"></i> <span>PostsController</span> <span class="pull-right-container">
+									<i class="fa fa-angle-left pull-right"></i> </span> </a>
+							<ul class="treeview-menu ">
+								<li class="active"><a href="#"><i class="fa fa-angle-right"></i> Posts</a></li>
+								<li><a href="../PostsController/Posting.html"><i class="fa fa-angle-right"></i> Posting</a></li>
+							</ul>
+						</li>
+						<li class="treeview active"><a href="#"><i class="fa fa-user"></i> <span>UsersController</span> <span class="pull-right-container">
+									<i class="fa fa-angle-left pull-right"></i> </span> </a>
+							<ul class="treeview-menu ">
+								<li class="active"><a href="../UsersController/Users.html"><i class="fa fa-angle-right"></i> Users</a></li>
+							</ul>
+						</li>
+						<li class="treeview"><a href="#"><i class="fa fa-desktop"></i> <span>ServerController</span> <span class="pull-right-container">
+									<i class="fa fa-angle-left pull-right"></i> </span> </a>
+							<ul class="treeview-menu ">
+								<li><a href="#" onclick="restart()"><i class="fa fa-angle-right"></i> ServerRestart</a></li>
+							</ul>
+						</li>
+						<li><a href="#" onclick="Logout()"> Logout</a></li>
+					</ul>
+					<!-- sidebar-menu -->
+				</section>
+			</aside>
+
+			<!-- Content Wrapper. Contains page content -->
+			<div class="content-wrapper">
+				<!-- Content Header (Page header) -->
+				<section class="content-header">
+					<h1>用户管理</h1>
+					<ol class="breadcrumb">
+						<li><a href="../Dashboard/Dashboard.html"><i class="fa fa-home"></i> Menu</a></li>
+						<li><i class="fa fa-user"></i> UsersController</li>
+						<li class="active"><i></i> Users</li>
+					</ol>
+				</section>
+
+				<!-- Main content -->
+				<section class="content container-fluid">
+					<div class="col-md-12">
+						<div class="chart-box">
+							<h4>正在修改用户信息... <code id="codezz"> userid : </code></h4>
+							<p>&nbsp;</p>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="col-md-6">
+										<div class="chart-box">
+											<fieldset class="form-group">
+												<h4>修改密码</h4>
+												<input class="form-control" id="basicInput" type="text">
+											</fieldset>
+											<button class="btn btn-primary" type="button" onclick="changePassword()" style="margin-top: -3px; margin-bottom: 0.9375rem;">修改密码</button>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="chart-box">
+											<h4>限制登录</h4>
+											<p>限制之后,平台禁止任何形式的登录</p>
+											<p>当前状态 : <span style="color: red;" id="Loginstatus">null</span></p>
+											<button class="btn btn-primary" type="button" onclick="Login(1)">限制登录</button>
+											<button type="button" class="btn btn-danger" onclick="Login(0)">取消限制</button>
+										</div>
+									</div>
+								</div>
+
+								<p>&nbsp;</p>
+
+								<div class="col-md-12">
+									<div class="col-md-6">
+										<div class="chart-box">
+											<h4>限制发帖</h4>
+											<p>限制之后,平台禁止任何形式的发帖</p>
+											<p>当前状态 : <span style="color: red;" id="Poststatus">null</span></p>
+											<button class="btn btn-primary" type="button" onclick="Post(1)">限制发帖</button>
+											<button type="button" class="btn btn-danger" onclick="Post(0)">取消限制</button>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="chart-box">
+											<h4>限制评论</h4>
+											<p>限制之后,平台禁止任何形式的评论</p>
+											<p>当前状态 : <span style="color: red;" id="Commentstatus">null</span></p>
+											<button class="btn btn-primary" type="button" onclick="Comment(1)">限制评论</button>
+											<button type="button" class="btn btn-danger" onclick="Comment(0)">取消限制</button>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- content -->
+			</div>
+			<!-- content-wrapper -->
+
+			<!-- Main Footer -->
+			<footer class="main-footer dark-bg">
+				<div class="pull-right hidden-xs"> Version 1.0</div>
+				Copyright &copy; 2017 Yourdomian. All rights reserved.
+			</footer>
+		</div>
+		<!-- wrapper -->
+		<script src="../../js/AdminRead.js"></script>
+	</body>
+</html>
