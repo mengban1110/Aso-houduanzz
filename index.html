@@ -1,82 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Aso-后台登录</title>
-		<!-- BootstrapCss -->
-		<link rel="stylesheet" href="./module/bootstrap/css/bootstrap.min.css">
-		<!-- 谷歌字体css -->
-		<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-		<!-- Template style -->
-		<link rel="stylesheet" href="./module/dist/css/style.css">
-		<link rel="stylesheet" href="./module/login/et-line-font/et-line-font.css">
-		<link rel="stylesheet" href="./module/login/font-awesome/css/font-awesome.min.css">
-		<link type="text/css" rel="stylesheet" href="./module/dist/weather/weather-icons.min.css">
-		<link type="text/css" rel="stylesheet" href="./module/dist/weather/weather-icons-wind.min.css">
-		<!-- jQuery -->
-		<script src="./module/dist/js/jquery.min.js"></script>
-		<script src="./module/bootstrap/js/bootstrap.min.js"></script>
-		<script src="./module/dist/js/ovio.js"></script>
-		
-		<!-- MyJs -->
-		<script src="js/mainJs/AjaxPost.js"></script>
-		<script src="js/mainJs/Cookies.js"></script>
-	</head>
 
-	<body class="body-bg-color">
-		<div class="wrapper">
-			<div class="form-body">
-				<form action="" class="col-form" novalidate>
-					<div class="col-logo"><a href="../index.html"><img alt="" src="./module/dist/img/logo-lg.png"></a></div>
-					<header>Aso-后台登录</header>
-					<fieldset>
-						<section>
-							<div class="form-group has-feedback">
-								<label class="control-label">ManagerName</label>
-								<input class="form-control" placeholder="ManagerName" type="text" id="managerName">
-								<span class="fa fa-envelope form-control-feedback" aria-hidden="true"></span>
-							</div>
-						</section>
-						<section>
-							<div class="form-group has-feedback">
-								<label class="control-label">Password</label>
-								<input class="form-control" placeholder="Password" type="password" id="managerPassword">
-								<span class="fa fa-lock form-control-feedback" aria-hidden="true"></span>
-							</div>
-						</section>
-					</fieldset>
-					<footer class="text-right">
-						<button type="button" class="btn btn-info pull-right" onclick="loginz()">登录</button>
-					</footer>
-				</form>
-			</div>
-		</div>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aso-后台登录</title>
+    <!-- BootstrapCss -->
+    <link rel="stylesheet" href="./module/bootstrap/css/bootstrap.min.css">
+    <!-- 谷歌字体css -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <!-- Template style -->
+    <link rel="stylesheet" href="./module/dist/css/style.css">
+    <link rel="stylesheet" href="./module/login/et-line-font/et-line-font.css">
+    <link rel="stylesheet" href="./module/login/font-awesome/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="./module/dist/weather/weather-icons.min.css">
+    <link type="text/css" rel="stylesheet" href="./module/dist/weather/weather-icons-wind.min.css">
+    <!-- jQuery -->
+    <script src="./module/dist/js/jquery.min.js"></script>
+    <script src="./module/bootstrap/js/bootstrap.js"></script>
+    <script src="./module/dist/js/ovio.js"></script>
 
-		<!-- wrapper -->
-		<script type="text/javascript">
-			function loginz() {
-				var managerName = $("#managerName").val();
-				var password = $("#managerPassword").val();
+    <!-- MyJs -->
+    <script src="js/mainJs/AjaxPost.js"></script>
+    <script src="js/mainJs/Cookies.js"></script>
+</head>
 
-				mypost(login, {
-					username: managerName,
-					password: password
-				}, function(data) {
-					console.log(data)
-					if (data.code == 200) {
-						var token = data.data.token;
-						addCookie("token",token,1)
-						window.location.href="pages/Dashboard/dashboard.html";
-					}else if(data.code == -1){
-						alert("用户或密码错误")
-					}else{
-						alert("请输入用户名密码")
-					}
-				});
-			}
-		</script>
+<body class="body-bg-color">
+    <div class="wrapper">
+        <div class="form-body">
+            <form action="" class="col-form" novalidate>
+                <div class="col-logo">
+                    <a href="../index.html"><img alt="" src="./module/dist/img/logo-lg.png"></a>
+                </div>
+                <header>Aso-后台登录</header>
+                <fieldset>
+                    <section>
+                        <div class="form-group has-feedback">
+                            <label class="control-label">ManagerName</label>
+                            <input class="form-control" placeholder="ManagerName" type="text" id="managerName">
+                            <span class="fa fa-envelope form-control-feedback" aria-hidden="true"></span>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="form-group has-feedback">
+                            <label class="control-label">Password</label>
+                            <input class="form-control" placeholder="Password" type="password" id="managerPassword">
+                            <span class="fa fa-lock form-control-feedback" aria-hidden="true"></span>
+                        </div>
+                    </section>
+                </fieldset>
+                <footer class="text-right">
+                    <button type="button" class="btn btn-info pull-right" onclick="loginz()">登录</button>
+                </footer>
+            </form>
+        </div>
+    </div>
 
-	</body>
+    <!-- wrapper -->
+    <script type="text/javascript">
+        function loginz() {
+            var managerName = $("#managerName").val();
+            var password = $("#managerPassword").val();
+
+            mypost(login, {
+                username: managerName,
+                password: password
+            }, function(data) {
+                console.log(data)
+                if (data.code == 200) {
+                    var token = data.data.token;
+                    addCookie("token", token, 1)
+                    window.location.href = "pages/Dashboard/dashboard.html";
+                } else if (data.code == -1) {
+                    alert("用户或密码错误")
+                } else {
+                    alert("请输入用户名密码")
+                }
+            });
+        }
+    </script>
+
+</body>
+
 </html>

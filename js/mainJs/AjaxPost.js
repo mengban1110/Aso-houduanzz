@@ -1,4 +1,4 @@
-var domain = "http://xiaoyouhui.cn1.utools.club/FriendAssociation" //项目domin
+var domain = "http://aso.qsub.cn" //项目domin
 var domain2 = "http://aso.qsub.cn" //温度监控domin
 
 var login = "/api/manager/login" //登录
@@ -58,22 +58,22 @@ var restartServer = "/api/server/restart" //重启服务器
  * @param {Object} callback
  */
 function mypost(api, parameters, callback) {
-	console.log("-------------------------")
-	console.log("请求地址 : " + domain + api)
-	$.ajax({
-		url: domain + api,
-		data: parameters,
-		type: 'POST',
-		dataType: 'JSON',
-		timeout: 5000, //超时时间设置， 单位毫秒
-		async: true, //是否异步
-		success: callback,
-		error: function() {
-			//异常处理；  
-			console.log('error : 服务器内部错误');
-			console.log("-------------------------")
-		}
-	});
+    console.log("-------------------------")
+    console.log("请求地址 : " + domain + api)
+    $.ajax({
+        url: domain + api,
+        data: parameters,
+        type: 'POST',
+        dataType: 'JSON',
+        timeout: 5000, //超时时间设置， 单位毫秒
+        async: true, //是否异步
+        success: callback,
+        error: function() {
+            //异常处理；  
+            console.log('error : 服务器内部错误');
+            console.log("-------------------------")
+        }
+    });
 }
 
 /**
@@ -84,22 +84,22 @@ function mypost(api, parameters, callback) {
  * @param {Object} callback
  */
 function mypost2(api, parameters, callback) {
-	console.log("-------------------------")
-	console.log("请求地址 : " + domain2 + api)
-	$.ajax({
-		url: domain2 + api,
-		data: parameters,
-		type: 'POST',
-		dataType: 'JSON',
-		timeout: 5000, //超时时间设置， 单位毫秒
-		async: true, //是否异步
-		success: callback,
-		error: function() {
-			//异常处理；  
-			console.log('error : 服务器内部错误');
-			console.log("-------------------------")
-		}
-	});
+    console.log("-------------------------")
+    console.log("请求地址 : " + domain2 + api)
+    $.ajax({
+        url: domain2 + api,
+        data: parameters,
+        type: 'POST',
+        dataType: 'JSON',
+        timeout: 5000, //超时时间设置， 单位毫秒
+        async: true, //是否异步
+        success: callback,
+        error: function() {
+            //异常处理；  
+            console.log('error : 服务器内部错误');
+            console.log("-------------------------")
+        }
+    });
 }
 
 
@@ -109,8 +109,8 @@ function mypost2(api, parameters, callback) {
  * @param {Object} name
  */
 function GetQueryString(name) {
-	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-	var r = window.location.search.substr(1).match(reg); //search,查询？后面的参数，并匹配正则
-	if (r != null) return unescape(r[2]);
-	return null;
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg); //search,查询？后面的参数，并匹配正则
+    if (r != null) return unescape(r[2]);
+    return null;
 }
