@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/bootstrap-switch/4.0.0-alpha.1/css/bootstrap-switch.min.css">
+
+
+
+
+    <link rel="stylesheet" href="/module/bootstrap/css/bootstrap.min.css">
+    <script src="/module/dist/js/jquery.min.js"></script>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/bootstrap-switch/4.0.0-alpha.1/js/bootstrap-switch.js"></script>
+</head>
+
+<body>
+    <input name="status" type="checkbox" data-size="small" id="status1" checked><br/><br/>
+
+    <button id="open">开</button>
+
+    <button id="close">关</button>
+
+</body>
+
+<script type="text/javascript">
+    $('[name="status"]').bootstrapSwitch({
+        //初始化按钮
+        onText: "开启",
+        offText: "关闭",
+        onColor: "success",
+        offColor: "info",
+        size: "small",
+        onSwitchChange: function(event, state) {
+            if (state == true) {
+                $(this).val("1");
+                console.log("开启");
+            } else {
+                $(this).val("2");
+                console.log("关闭");
+            }
+        }
+    });
+
+
+    $("#close").click(function() {
+        $('[name="status"]').bootstrapSwitch('state', false); // 关闭按钮
+
+    });
+    $("#open").click(function() {
+        $('[name="status"]').bootstrapSwitch('state', true); // 打开按钮       
+    });
+</script>
+
+</html>

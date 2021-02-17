@@ -37,6 +37,25 @@
         #tbody td {
             vertical-align: middle;
         }
+        
+        .tables {
+            min-width: 1282px;
+            width: 100%;
+        }
+        
+        .bs-example {
+            overflow: auto;
+        }
+        
+        .dataTables_filter {
+            top: 0;
+            right: 0;
+            max-width: 200px;
+        }
+        
+        tr {
+            border-bottom: #8caaff solid 1px;
+        }
     </style>
 </head>
 
@@ -143,33 +162,37 @@
             <section class="content container-fluid">
                 <div class="col-md-12">
                     <div class="chart-box">
-                        <h4>所有用户信息</h4>
-                        <p>点击<code>修改</code>可修改对应用户相关信息...</p>
-                        <div id="example_filter" class="dataTables_filter pull-right">
-                            <input class="form-control" id="placeholderInput" placeholder="条件查询">
-                            <button class="btn btn-success btn-block" type="button" style="margin:0.625rem 0rem;" onclick="search()">搜索</button>
+                        <div>
+                            <h4>所有用户信息</h4>
+                            <p>点击<code>修改</code>可修改对应用户相关信息...</p>
+                            <div id="example_filter" class="dataTables_filter">
+                                <input class="form-control" id="placeholderInput" placeholder="条件查询">
+                                <button class="btn btn-success btn-block" type="button" style="margin:0.625rem 0rem;" onclick="search()">搜索</button>
+                            </div>
                         </div>
-                        <table class="table table-responsive">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th class="sortable">用户信息</th>
-                                    <th class="sortable">用户签名</th>
-                                    <th class="sortable">性别</th>
-                                    <th class="sortable">生日</th>
-                                    <th class="sortable">学校</th>
-                                    <th class="sortable">发帖数量</th>
-                                    <th class="sortable">粉丝数量</th>
-                                    <th class="sortable">关注数量</th>
-                                    <th class="sortable">所学专业</th>
-                                    <th class="sortable">是否在校生</th>
-                                    <th class="sortable">操作</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tbody">
+                        <div class="bs-example">
+                            <table class="tables table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th class="sortable">用户信息</th>
+                                        <th class="sortable">用户签名</th>
+                                        <th class="sortable">性别</th>
+                                        <th class="sortable">生日</th>
+                                        <th class="sortable">学校</th>
+                                        <th class="sortable">发帖数量</th>
+                                        <th class="sortable">粉丝数量</th>
+                                        <th class="sortable">关注数量</th>
+                                        <th class="sortable">所学专业</th>
+                                        <th class="sortable">是否在校生</th>
+                                        <th class="sortable">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody">
 
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
 
                     </div>
                 </div>

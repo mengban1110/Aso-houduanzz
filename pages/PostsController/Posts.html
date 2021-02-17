@@ -36,6 +36,21 @@
         #tbody td {
             vertical-align: middle;
         }
+        
+        .tables {
+            min-width: 1282px;
+            width: 100%;
+        }
+        
+        .bs-example {
+            overflow: auto;
+        }
+        
+        .dataTables_filter {
+            top: 0;
+            right: 0;
+            max-width: 200px;
+        }
     </style>
 
 </head>
@@ -145,31 +160,34 @@
             <section class="content container-fluid">
                 <div class="col-md-12">
                     <div class="chart-box">
-                        <h4>审核通过的帖子</h4>
-                        <p>点击<code>删除</code>可删除对应帖子...</p>
-                        <div id="example_filter" class="dataTables_filter pull-right">
-                            <input class="form-control" id="placeholderInput" placeholder="条件查询">
-                            <button class="btn btn-success btn-block" type="button" style="margin:0.625rem 0rem;" onclick="search()">搜索</button>
+                        <div>
+                            <h4>审核通过的帖子</h4>
+                            <p>点击<code>删除</code>可删除对应帖子...</p>
+                            <div id="example_filter" class="dataTables_filter">
+                                <input class="form-control" id="placeholderInput" placeholder="条件查询">
+                                <button class="btn btn-success btn-block" type="button" style="margin:0.625rem 0rem;" onclick="search()">搜索</button>
+                            </div>
                         </div>
-                        <table class="table table-responsive">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th class="sortable">所属板块</th>
-                                    <th class="sortable">帖子类型</th>
-                                    <th class="sortable">帖子文本</th>
-                                    <th class="sortable">帖子图片</th>
-                                    <th class="sortable">帖子视频</th>
-                                    <th class="sortable">发帖时间</th>
-                                    <th class="sortable">发帖人</th>
-                                    <th class="sortable">操作</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tbody">
+                        <div class="bs-example">
+                            <table class="tables table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th class="sortable">所属板块</th>
+                                        <th class="sortable">帖子类型</th>
+                                        <th class="sortable">帖子文本</th>
+                                        <th class="sortable">帖子图片</th>
+                                        <th class="sortable">帖子视频</th>
+                                        <th class="sortable">发帖时间</th>
+                                        <th class="sortable">发帖人</th>
+                                        <th class="sortable">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody">
 
-                            </tbody>
-                        </table>
-
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
