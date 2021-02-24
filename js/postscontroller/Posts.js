@@ -19,8 +19,7 @@ function getinfo() {
 					item.postid, item.placa.placaname, item.userinfo.uname, item.userinfo.useravatar))
 			})
 		} else if (data.code == -1) {
-			alert("暂无数据,将查询所有...")
-			getinfo()
+			alert("暂无数据!")
 		} else {
 			alert("请重新登录验证身份!")
 			window.location.href = "../../index.html";

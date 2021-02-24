@@ -58,10 +58,13 @@ function Logout() {
 /**
  * 上传文件
  */
-function pushApk() {
+function uploadApk() {
 	var formzz = document.getElementById('form1');
 	var formData = new FormData(formzz);
 	formData.append("path", $("#myfile").get(0).files[0]);
+	var formStr = JSON.stringify(getCookie("token"));
+	formData.set('token', formStr);
+	console.log(formData)
 	$.ajax({
 		url: domain + pushApk,
 		type: "post",

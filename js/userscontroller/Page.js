@@ -11,7 +11,6 @@ $(function() {
  * 修改密码
  */
 function changePassword() {
-	alert(useridz)
 	mypost(setUserKey, {
 		token: getCookie("token"),
 		userid: useridz,
@@ -35,7 +34,6 @@ function changePassword() {
  * 获取登录权限
  */
 function getLoginstatus() {
-	alert(useridz)
 	mypost(getUserLogin, {
 		token: getCookie("token"),
 		userid: useridz
@@ -79,7 +77,6 @@ function Login(type) {
  * 获取发帖权限
  */
 function getPoststatus() {
-	alert(useridz)
 	mypost(getUserPost, {
 		token: getCookie("token"),
 		userid: useridz
@@ -123,7 +120,6 @@ function Post(type) {
  * 获取评论权限
  */
 function getCommentstatus() {
-	alert(useridz)
 	mypost(getUserComment, {
 		token: getCookie("token"),
 		userid: useridz

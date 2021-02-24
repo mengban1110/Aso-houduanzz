@@ -1,4 +1,5 @@
-var domain = "http://aso.qsub.cn" //项目domin
+// var domain = "http://aso.qsub.cn" //项目domin
+var domain = "http://xiaoyouhui.cn1.utools.club/FriendAssociation" //项目domin
 var domain2 = "http://aso.qsub.cn" //温度监控domin
 
 var login = "/api/manager/login" //登录
@@ -14,7 +15,7 @@ var getAnnouncement = "/api/controller/announcement/getinfo" //获取公告信�
 var setAnnouncement = "/api/controller/announcement/postinfo" //设置公告信息
 var getVersion = "/api/controller/version/getinfo" //获取当前版本
 var setVersion = "/api/controller/version/postinfo" //设置当前版本
-var pushApk = "/api/controller/updata/postinfo" //上传apk
+var pushApk = "/api/controller/update/postinfo" //上传apk
 
 var getSchoolInfo = "/api/controller/school/getinfo" //获取所有学校信息
 var postSchoolInfo = "/api/controller/school/postinfo" //新增或新增学校信息
