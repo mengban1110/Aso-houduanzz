@@ -1,5 +1,5 @@
 // var domain = "http://aso.qsub.cn" //项目domin
-var domain = "http://xiaoyouhui.cn1.utools.club/FriendAssociation" //项目domin
+var domain = "http://localhost:8080/FriendAssociation" //项目domin
 var domain2 = "http://aso.qsub.cn" //温度监控domin
 
 var login = "/api/manager/login" //登录
